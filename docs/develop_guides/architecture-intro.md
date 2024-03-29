@@ -205,7 +205,7 @@ MIR 中的 [PatternMacher](https://github.com/PaddlePaddle/Paddle-Lite/blob/deve
 Tensor0(kARM, kFloat, kNCHW) --pass--> Tensor1(kOpenCL, kFloat, kNCHW)
 ```
 
-MIR 会识别出，Tensor0 和 Tensor1 的硬件位置不同，因此触发相依的 Pass 插入对应的 Cast Op 来进行 Type Cast，比如
+MIR 会识别出，Tensor0 和 Tensor1 的硬件位置不同，因此触发相应的 Pass 插入对应的 Cast Op 来进行 Type Cast，比如
 
 ```
 Tensor0(kARM, kFloat, kNCHW) --pass-> IoCopyOp(kARM, kOpenCL) --pass-> Tensor1(kOpenCL, kFloat, kNCHW)
